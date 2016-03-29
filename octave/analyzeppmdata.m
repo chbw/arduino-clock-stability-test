@@ -39,7 +39,7 @@ f = n/N;
 all_idx = 1:length(data);
 outlier_idx = find(abs(data)>0.008e6); % missed at least one pulse
 non_outlier_idx = setdiff(all_idx, outlier_idx);
-data(outlier_idx) = interp1(non_outlier_idx, data(non_outlier_idx), outlier_idx);
+%data(outlier_idx) = interp1(non_outlier_idx, data(non_outlier_idx), outlier_idx);
 data = medfilt1(data_raw,37);
 
 missing_seconds = -sum(data_raw(outlier_idx))/1e6
